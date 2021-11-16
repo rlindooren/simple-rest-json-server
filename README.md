@@ -18,6 +18,22 @@ Provide REST path and file mapping 'routes' as arguments, e.g.:
 
 ### Docker
 
+Pre-build image can be found here: [rlindooren/simple-rest-json-server:latest](https://hub.docker.com/r/rlindooren/simple-rest-json-server/tags)
+
+```shell
+# Update this to match your own set-up
+DATA_DIR="$(pwd)/example-data/"
+PORT=8080
+
+docker run \
+  --volume "${DATA_DIR}:/data/" \
+  -p "${PORT}:${PORT}" \
+  --env "PORT=${PORT}" \
+  rlindooren/simple-rest-json-server:latest \
+  --route "/api/products/=/data/allProducts.json" \
+  --route "/api/customers/=/data/allCustomers.json"
+```
+
 #### Build
 
 ```shell
