@@ -59,3 +59,13 @@ docker run \
 ```
 
 Then goto [http://localhost:8080/](http://localhost:8080/).
+
+When serving really large files you may have to extend the available memory.
+For example like so:
+
+```shell
+docker run \
+  --env "JAVA_OPTS=-Xmx2024M" \
+  --memory=2g \
+  ...
+```
