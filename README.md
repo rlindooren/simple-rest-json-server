@@ -2,7 +2,7 @@
 
 Run a HTTP REST server that serves JSON content from files.
 
-Uses the [Ktor frame work](https://ktor.io/)
+Uses [Ktor](https://ktor.io/)
 
 ## Usage
 
@@ -62,7 +62,7 @@ docker run \
 
 Then goto [http://localhost:8080/](http://localhost:8080/).
 
-When serving really large files you may have to extend the available memory.
+When serving really large files you may have to extend the available memory(?).
 For example like so:
 
 ```shell
