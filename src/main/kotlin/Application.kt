@@ -5,8 +5,6 @@ import com.github.ajalt.clikt.parameters.options.option
 import io.ktor.application.*
 import io.ktor.features.*
 import io.ktor.html.*
-import io.ktor.http.ContentType.Application.Json
-import io.ktor.http.HttpStatusCode.Companion.OK
 import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.server.engine.*
@@ -75,12 +73,7 @@ class Server : CliktCommand() {
 
     private fun Routing.createRoute(restPath: String, file: File) {
         get(restPath) {
-            call.respondBytes(contentType = Json, status = OK) {
-                // TODO: Stream data(?)
-                val bytes = file.readBytes()
-                println("Serving ${call.request} with ${bytes.size} bytes from $file")
-                bytes
-            }
+            call.respondFile(file)
         }
     }
 
