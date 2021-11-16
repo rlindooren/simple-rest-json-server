@@ -26,6 +26,7 @@ DATA_DIR="$(pwd)/example-data/"
 PORT=8080
 
 docker run \
+  --rm \
   --volume "${DATA_DIR}:/data/" \
   -p "${PORT}:${PORT}" \
   --env "PORT=${PORT}" \
@@ -50,6 +51,7 @@ DATA_DIR="$(pwd)/example-data/"
 PORT=8080
 
 docker run \
+  --rm \
   --volume "${DATA_DIR}:/data/" \
   -p "${PORT}:${PORT}" \
   --env "PORT=${PORT}" \
