@@ -12,21 +12,21 @@ It's a couple of lines of Kotlin code, using [Ktor](https://ktor.io/) and [Clikt
 
 _If you need a more advanced mock REST JSON server, then please have a look at [JSON Server](https://github.com/typicode/json-server)._ 
 
+---
+
 ## Usage
 
 Provide REST path and file mapping 'routes' as arguments, e.g.:
 
-`--route "/api/products/=/data/allProducts.json" --route "/api/customers/=/data/allCustomers.json"`
-
-### Run with Gradle
-
-```shell
-./gradlew run --args="--route /api/products/=example-data/allProducts.json --route /api/customers/=example-data/allCustomers.json"
+```
+--route "/api/products/=/data/allProducts.json"
+--route "/api/customers/=/data/allCustomers.json"
+etc.
 ```
 
-### Docker
+### Run with Docker 🐳
 
-Pre-build image can be found here: [rlindooren/simple-rest-json-server:latest](https://hub.docker.com/r/rlindooren/simple-rest-json-server/tags)
+A pre-build image can be found here: [rlindooren/simple-rest-json-server:latest](https://hub.docker.com/r/rlindooren/simple-rest-json-server/tags)
 
 ```shell
 # Update this to match your own set-up
@@ -43,15 +43,21 @@ docker run \
   --route "/api/customers/=/data/allCustomers.json"
 ```
 
-#### Build
+Then goto [http://localhost:8080/](http://localhost:8080/).
+
+### Run with Gradle
+
+```shell
+./gradlew run --args="--route /api/products/=example-data/allProducts.json --route /api/customers/=example-data/allCustomers.json"
+```
+
+### Build Docker image
 
 ```shell
 ./gradlew installDist
 
 docker build -t simple-rest-json-server .
 ```
-
-#### Run
 
 ```shell
 # Update this to match your own set-up
@@ -67,8 +73,6 @@ docker run \
   --route "/api/products/=/data/allProducts.json" \
   --route "/api/customers/=/data/allCustomers.json"
 ```
-
-Then goto [http://localhost:8080/](http://localhost:8080/).
 
 When serving really large files you may have to extend the available memory(?).
 For example like so:
