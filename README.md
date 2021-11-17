@@ -1,8 +1,10 @@
 # Simple REST JSON server
 
-Run a HTTP REST server that serves JSON content from files.
+Run a HTTP REST server that serves JSON<sup>*</sup> content from files.
 
-Uses [Ktor](https://ktor.io/)
+<sup>* other file types work as well, the `content-type` is determined by the file extension.</sup>
+
+It's a couple of lines of Kotlin code, using [Ktor](https://ktor.io/) and [Clikt](https://ajalt.github.io/clikt/).
 
 ## Usage
 
