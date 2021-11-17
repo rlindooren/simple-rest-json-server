@@ -6,6 +6,12 @@ Run a HTTP REST server that serves JSON<sup>*</sup> content from files.
 
 It's a couple of lines of Kotlin code, using [Ktor](https://ktor.io/) and [Clikt](https://ajalt.github.io/clikt/).
 
+![Index page](doc/screenshot-1.png)
+
+![Json response](doc/screenshot-2.png)
+
+_If you need a more advanced mock REST JSON server, then please have a look at [JSON Server](https://github.com/typicode/json-server)._ 
+
 ## Usage
 
 Provide REST path and file mapping 'routes' as arguments, e.g.:
