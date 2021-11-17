@@ -4,7 +4,7 @@ Run a HTTP REST server that serves JSON<sup>*</sup> content from files.
 
 <sup>* other file types work as well, the `content-type` is determined by the file extension.</sup>
 
-It's a couple of lines of Kotlin code, using [Ktor](https://ktor.io/) and [Clikt](https://ajalt.github.io/clikt/).
+It's a couple of lines of Kotlin [code](src/main/kotlin/Application.kt), using [Ktor](https://ktor.io/) and [Clikt](https://ajalt.github.io/clikt/).
 
 ![Index page](doc/screenshot-1.png)
 
